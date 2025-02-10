@@ -45,6 +45,7 @@ def get_places_for_department(department):
             
             return [
                 {
+                    "name": place['name'],
                     "x": place['geometry']['location']['lng'],
                     "y": place['geometry']['location']['lat']
                 }
@@ -52,7 +53,7 @@ def get_places_for_department(department):
             ]
             
         except KeyError as e:
-            raise GoogleMapsAPIError(f"Invalid response format from Google Maps API: {str(e)}")
+            raise GoogleMapsAPIError(f"Invalid response format from Google Maps API: {str(e)}, response: {places}")
             
     except requests.RequestException as e:
         raise GoogleMapsAPIError(f"Network error while calling Google Maps API: {str(e)}") 

@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from api.dify_api import get_recommended_departments
 from api.google_maps_api import get_places_for_department
 from api.exceptions import APIError, ValidationError
 
 app = Flask(__name__)
+
+# 配置 CORS
+CORS(app)  # 允許所有來源的跨域請求
 
 # 設置 JSON 編碼
 app.config['JSON_AS_ASCII'] = False
