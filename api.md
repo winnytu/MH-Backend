@@ -35,6 +35,7 @@
         "coordinates": [       // 醫療機構位置列表
             {
                 "name": string,   // 醫療機構名稱
+                "place_id": string,   // Google Maps place ID
                 "x": number,   // 經度
                 "y": number    // 緯度
             }
@@ -49,6 +50,7 @@
 | name | string | 科別名稱 | "內科" |
 | coordinates | array | 醫療機構位置列表 | - |
 | coordinates[].name | string | 醫療機構名稱 | "仁愛醫院" |
+| coordinates[].place_id | string | Google Maps 地點 ID | "ChIJN1t_tDeuEmsRUsoyG83frY4" |
 | coordinates[].x | number | 經度 | 121.5598 |
 | coordinates[].y | number | 緯度 | 25.0338 |
 
@@ -85,11 +87,13 @@ curl -X POST https://[YOUR-APP-URL]/api/recommend-departments \
         "coordinates": [
             {
                 "name": "台北醫學大學附設醫院",
+                "place_id": "ChIJN1t_tDeuEmsRUsoyG83frY4",
                 "x": 121.5598,
                 "y": 25.0338
             },
             {
                 "name": "仁愛醫院",
+                "place_id": "ChIJN1t_tDeuEmsRUsoyG83frY4",
                 "x": 121.5234,
                 "y": 25.0532
             }
@@ -100,11 +104,13 @@ curl -X POST https://[YOUR-APP-URL]/api/recommend-departments \
         "coordinates": [
             {
                 "name": "臺大醫院",
+                "place_id": "ChIJN1t_tDeuEmsRUsoyG83frY4",
                 "x": 121.5432,
                 "y": 25.0445
             },
             {
                 "name": "馬偕醫院",
+                "place_id": "ChIJN1t_tDeuEmsRUsoyG83frY4",
                 "x": 121.5123,
                 "y": 25.0234
             }

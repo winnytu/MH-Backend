@@ -46,6 +46,7 @@ def get_places_for_department(department):
             return [
                 {
                     "name": place['name'],
+                    "place_id": place['place_id'],
                     "x": place['geometry']['location']['lng'],
                     "y": place['geometry']['location']['lat']
                 }
